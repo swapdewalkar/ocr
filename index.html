@@ -14,7 +14,7 @@
             },  
             success: function(response) {  
                     console.log(response)  
-                    $("#status").empty().text("DOB: "+ response['dob'][0]);  
+                    $("#status").empty().html("DOB: "+ response['dob'][0]+"<br />"+"PAN: "+ response['pan'][0]+"<br />"+"Full Name: "+ response['name']+"<br />"+"Father Name: "+response['fname']);  
             }  
     });  
     return false;  
