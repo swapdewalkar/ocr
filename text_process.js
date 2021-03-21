@@ -1,3 +1,5 @@
+var db = require('./db')
+
 function findDOB(text){
     return text.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
 }
@@ -37,5 +39,6 @@ var findDetails = function(text,res){
     details['name']=name.split("\n")[0];
     details['fname']=name.split("\n")[1];
     res.send(details)
+    db.storedata(details)
 }
 module.exports = {findDetails}; 
